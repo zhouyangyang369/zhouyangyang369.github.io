@@ -10,25 +10,18 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             line-height: 1.6;
             background-color: #f4f4f4;
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
         }
         header {
             text-align: center;
             padding: 20px;
             background-color: #f4f4f4;
-            background-image: url('https://example.com/path/to/philippines-landscape.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
         }
         nav {
             margin: 20px 0;
@@ -42,10 +35,38 @@
         .content {
             padding: 20px;
         }
+        .menu-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .menu-card:active {
+            transform: scale(0.98);
+        }
+        .menu-card-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
         footer {
             text-align: center;
             padding: 10px;
             color: #666;
+        }
+        .work-in-progress {
+            display: flex;
+            align-items: center;
+        }
+        .construction-icon {
+            margin-left: 10px;
+            color: #ffcc00;
         }
         @media (max-width: 600px) {
             .container {
@@ -114,6 +135,21 @@
         <div class="content">
             <h2>Travel Section</h2>
             <p>This is the travel section. Here you can introduce your travel experiences, share travel photos, and insights.</p>
+            
+            <div class="menu-card" onclick="alert('Menu Card Clicked!')">
+                <div class="menu-card-title">Menu Card Title 1</div>
+                <p>Some description about this menu card. It can contain brief information.</p>
+            </div>
+            
+            <div class="menu-card" onclick="alert('Menu Card Clicked!')">
+                <div class="menu-card-title">Menu Card Title 2</div>
+                <p>Some description about this menu card. It can contain brief information.</p>
+            </div>
+
+            <div class="menu-card" onclick="alert('Menu Card Clicked!')">
+                <div class="menu-card-title">Menu Card Title 3</div>
+                <p>Some description about this menu card. It can contain brief information.</p>
+            </div>
         </div>
 
         <footer>
