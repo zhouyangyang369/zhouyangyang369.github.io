@@ -58,7 +58,7 @@
         }
     </style>
     <script>
-        window.onload = function() {
+        function checkPassword() {
             var password = prompt("Please enter the password to access the Travel page:", "");
             if (password === null) {
                 // User clicked the cancel button
@@ -67,6 +67,23 @@
                 alert("Incorrect password, please try again.");
                 // Reload the page to prompt for password again
                 window.location.reload();
+            } else {
+                // Password is correct, store the current timestamp in localStorage
+                var now = new Date().getTime();
+                localStorage.setItem('travelPageAccess', now);
+            }
+        }
+
+        window.onload = function() {
+            var lastAccess = localStorage.getItem('travelPageAccess');
+            var now = new Date().getTime();
+
+            if (lastAccess && (now - lastAccess) < 3600000) {
+                // If last access was within the last hour, allow access without password
+                return;
+            } else {
+                // Otherwise, prompt for password
+                checkPassword();
             }
         };
     </script>
@@ -88,7 +105,7 @@
         </div>
 
         <footer>
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Yangyang Zhou. All rights reserved.</p>
         </footer>
     </div>
 </body>
