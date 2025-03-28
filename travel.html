@@ -58,6 +58,15 @@
         }
     </style>
     <script>
+        function generateUUID() {
+            // Generate a UUID to uniquely identify the user
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0,
+                    v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
         function checkPassword() {
             var password = prompt("Please enter the password to access the Travel page:", "");
             if (password === null) {
@@ -68,18 +77,21 @@
                 // Reload the page to prompt for password again
                 window.location.reload();
             } else {
-                // Password is correct, store the current timestamp in localStorage
+                // Password is correct, store the current timestamp and UUID in localStorage
                 var now = new Date().getTime();
+                var uuid = generateUUID();
                 localStorage.setItem('travelPageAccess', now);
+                localStorage.setItem('travelPageUUID', uuid);
             }
         }
 
         window.onload = function() {
             var lastAccess = localStorage.getItem('travelPageAccess');
+            var uuid = localStorage.getItem('travelPageUUID');
             var now = new Date().getTime();
 
-            if (lastAccess && (now - lastAccess) < 3600000) {
-                // If last access was within the last hour, allow access without password
+            if (lastAccess && (now - lastAccess) < 3600000 && uuid) {
+                // If last access was within the last hour and UUID exists, allow access without password
                 return;
             } else {
                 // Otherwise, prompt for password
