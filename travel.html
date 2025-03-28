@@ -34,6 +34,12 @@
             padding: 20px;
             color: black; /* 确保header中的文字颜色为黑色 */
             font-weight: bold; /* 设为粗体 */
+            position: relative;
+        }
+        .glow {
+            font-size: 2em;
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
         }
         nav {
             margin: 20px 0;
@@ -140,7 +146,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Travel Page</h1>
+            <h1 class="glow">Travel Page</h1>
         </header>
 
         <nav>
