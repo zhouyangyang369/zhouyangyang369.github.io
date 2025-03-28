@@ -15,12 +15,12 @@
             animation: backgroundAnimation 30s infinite;
         }
         @keyframes backgroundAnimation {
-            0% { background-color: #FFB6C1; }
-            20% { background-color: #FFDAC1; }
-            40% { background-color: #E2F0CB; }
-            60% { background-color: #B5EAD7; }
-            80% { background-color: #C7CEEA; }
-            100% { background-color: #FFB6C1; }
+            0% { background-color: #FFE4E1; }
+            20% { background-color: #FFF5E1; }
+            40% { background-color: #E6FAF0; }
+            60% { background-color: #E0FFFF; }
+            80% { background-color: #F0F8FF; }
+            100% { background-color: #FFE4E1; }
         }
         .container {
             max-width: 800px;
@@ -29,7 +29,6 @@
         header {
             text-align: center;
             padding: 20px;
-            background-color: #f4f4f4;
         }
         nav {
             margin: 20px 0;
@@ -91,7 +90,7 @@
             // Generate a UUID to uniquely identify the user
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
                 var r = Math.random() * 16 | 0,
-                    v = c === 'x' ? r : (r & 0x3 | 0x8);
+                    v = c === 'x' ? r : (r & 0x3 | 8);
                 return v.toString(16);
             });
         }
