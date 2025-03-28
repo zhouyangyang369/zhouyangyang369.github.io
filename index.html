@@ -16,6 +16,7 @@
             line-height: 1.6;
             animation: backgroundAnimation 10s infinite; /* 调整动画持续时间为10秒 */
             color: black; /* 默认字体颜色为黑色 */
+            overflow: hidden; /* 防止图标超出页面 */
         }
         @keyframes backgroundAnimation {
             0% { background-color: #FFE4E1; }
@@ -28,22 +29,36 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         header {
             text-align: center;
             padding: 20px;
             position: relative;
+            z-index: 2;
         }
         .glow {
             font-size: 2em;
-            color: #fffacd; /* 浅黄色 */
-            text-shadow: 0 0 5px #fffacd, 0 0 10px #ffffe0, 0 0 15px #ffffe0, 0 0 20px #ffffe0, 0 0 25px #ffffe0, 0 0 30px #ffffe0, 0 0 35px #ffffe0;
+            color: #ADD8E6; /* 蓝色 */
+            text-shadow: 0 0 5px #ADD8E6, 0 0 10px #87CEEB, 0 0 15px #87CEEB, 0 0 20px #87CEEB, 0 0 25px #87CEEB, 0 0 30px #87CEEB, 0 0 35px #87CEEB;
         }
         .icon {
-            font-size: 1.5em;
-            color: #ffd700; /* 马卡龙黄色 */
-            margin: 0 10px;
+            font-size: 2em;
+            color: #1E90FF; /* 深蓝色 */
+            position: absolute;
+            animation: float 5s infinite ease-in-out;
         }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .icon-plane { top: 10%; left: 20%; }
+        .icon-car { top: 30%; left: 70%; }
+        .icon-motorcycle { top: 50%; left: 25%; }
+        .icon-mountain { top: 60%; left: 80%; }
+        .icon-city { top: 40%; left: 50%; }
+        .icon-water { top: 80%; left: 40%; }
         nav {
             margin: 20px 0;
             text-align: center;
@@ -87,11 +102,6 @@
     <div class="container">
         <header>
             <h1 class="glow">Yangyang's Home</h1>
-            <i class="fas fa-plane icon"></i>
-            <i class="fas fa-car icon"></i>
-            <i class="fas fa-mountain icon"></i>
-            <i class="fas fa-water icon"></i>
-            <i class="fas fa-city icon"></i>
         </header>
 
         <nav>
@@ -110,5 +120,13 @@
             <p>&copy; 2025 Yangyang Zhou. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- 添加图标 -->
+    <i class="fas fa-plane icon icon-plane"></i>
+    <i class="fas fa-car icon icon-car"></i>
+    <i class="fas fa-motorcycle icon icon-motorcycle"></i>
+    <i class="fas fa-mountain icon icon-mountain"></i>
+    <i class="fas fa-city icon icon-city"></i>
+    <i class="fas fa-water icon icon-water"></i>
 </body>
 </html>
