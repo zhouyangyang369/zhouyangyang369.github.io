@@ -12,7 +12,15 @@
             margin: 0;
             padding: 20px;
             line-height: 1.6;
-            background-color: #f4f4f4;
+            animation: backgroundAnimation 30s infinite;
+        }
+        @keyframes backgroundAnimation {
+            0% { background-color: #FFB6C1; }
+            20% { background-color: #FFDAC1; }
+            40% { background-color: #E2F0CB; }
+            60% { background-color: #B5EAD7; }
+            80% { background-color: #C7CEEA; }
+            100% { background-color: #FFB6C1; }
         }
         .container {
             max-width: 800px;
