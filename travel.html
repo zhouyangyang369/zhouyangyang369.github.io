@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅游页面</title>
+    <title>Travel Page</title>
     <!-- 引入 Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -59,13 +59,13 @@
     </style>
     <script>
         window.onload = function() {
-            var password = prompt("请输入密码以进入旅游页面：", "");
+            var password = prompt("Please enter the password to access the Travel page:", "");
             if (password === null) {
-                // 用户点击了取消按钮
+                // User clicked the cancel button
                 window.location.href = "index.html";
             } else if (password !== "123") {
-                alert("密码错误，请重试。");
-                // 重新加载页面以再次提示输入密码
+                alert("Incorrect password, please try again.");
+                // Reload the page to prompt for password again
                 window.location.reload();
             }
         };
@@ -74,7 +74,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>旅游页面</h1>
+            <h1>Travel Page</h1>
         </header>
 
         <nav>
@@ -83,12 +83,12 @@
         </nav>
 
         <div class="content">
-            <h2>旅游板块</h2>
-            <p>这里是旅游板块的内容。你可以在这里介绍你的旅游经历、分享旅游照片和心得。</p>
+            <h2>Travel Section</h2>
+            <p>This is the travel section. Here you can introduce your travel experiences, share travel photos, and insights.</p>
         </div>
 
         <footer>
-            <p>&copy; 2025 我的名字。保留所有权利。</p>
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
         </footer>
     </div>
 </body>
