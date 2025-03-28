@@ -7,12 +7,15 @@
     <!-- 引入 Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
             line-height: 1.6;
             animation: backgroundAnimation 30s infinite;
+            color: black; /* 默认字体颜色为黑色 */
         }
         @keyframes backgroundAnimation {
             0% { background-color: #FFE4E1; }
@@ -29,6 +32,9 @@
         header {
             text-align: center;
             padding: 20px;
+            color: black; /* 确保header中的文字颜色为黑色 */
+            font-family: 'Dancing Script', cursive; /* 使用艺术字体 */
+            font-weight: bold; /* 设为粗体 */
         }
         nav {
             margin: 20px 0;
@@ -83,6 +89,11 @@
             .content {
                 padding: 10px;
             }
+            header {
+                color: black; /* 移动端确保header中的文字颜色为黑色 */
+                font-family: 'Dancing Script', cursive; /* 使用艺术字体 */
+                font-weight: bold; /* 设为粗体 */
+            }
         }
     </style>
     <script>
@@ -90,7 +101,7 @@
             // Generate a UUID to uniquely identify the user
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
                 var r = Math.random() * 16 | 0,
-                    v = c === 'x' ? r : (r & 0x3 | 8);
+                    v = c === 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             });
         }
@@ -140,9 +151,6 @@
         </nav>
 
         <div class="content">
-            <h2>Travel Section</h2>
-            <p>This is the travel section. Here you can introduce your travel experiences, share travel photos, and insights.</p>
-            
             <div class="menu-card" onclick="alert('Menu Card Clicked!')">
                 <div class="menu-card-title">Menu Card Title 1</div>
                 <p>Some description about this menu card. It can contain brief information.</p>
