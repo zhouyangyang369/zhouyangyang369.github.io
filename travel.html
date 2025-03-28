@@ -57,6 +57,19 @@
             }
         }
     </style>
+    <script>
+        window.onload = function() {
+            var password = prompt("请输入密码以进入旅游页面：", "");
+            if (password === null) {
+                // 用户点击了取消按钮
+                window.location.href = "index.html";
+            } else if (password !== "123") {
+                alert("密码错误，请重试。");
+                // 重新加载页面以再次提示输入密码
+                window.location.reload();
+            }
+        };
+    </script>
 </head>
 <body>
     <div class="container">
@@ -65,10 +78,8 @@
         </header>
 
         <nav>
-            <a href="index.html#home">首页</a>
-            <a href="index.html#about">关于我</a>
-            <a href="index.html#contact">联系方式</a>
-            <a href="travel.html">旅游</a>
+            <a href="index.html">Home</a>
+            <a href="travel.html">Travel</a>
         </nav>
 
         <div class="content">
