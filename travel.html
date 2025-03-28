@@ -90,18 +90,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
+            width: 100%; /* 更改宽度与menu card一致 */
             padding: 20px;
             cursor: pointer;
             font-size: 2em;
-            color: #ff00ff;
-            border: 2px dashed #ff00ff;
+            color: #FFD700; /* 高级的马卡龙黄色 */
+            border: 2px dashed #FFD700; /* 高级的马卡龙黄色边框 */
             border-radius: 10px;
             margin-bottom: 20px;
             transition: background-color 0.2s, color 0.2s;
         }
         .add-card:hover {
-            background-color: #ff00ff;
+            background-color: #FFD700; /* 高级的马卡龙黄色 */
             color: #fff;
         }
         footer {
@@ -200,8 +200,8 @@
             cardContainer.appendChild(cardTitle);
             cardContainer.appendChild(cardDescription);
 
-            var contentDiv = document.querySelector('.content');
-            contentDiv.appendChild(cardContainer);
+            var addCardButton = document.querySelector('.add-card');
+            addCardButton.parentNode.insertBefore(cardContainer, addCardButton);
 
             createNewPage(title, description);
         }
